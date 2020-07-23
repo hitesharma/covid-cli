@@ -1,6 +1,14 @@
+const covidAPI = require('../lib/covidAPI');
 
-const data = (cmd) => {
-    console.log('data working', cmd.args[0]);
+const country = async () => {
+    let covid = await covidAPI();
+    let overallData = covid.overallData;
+    console.log(overallData);
+}
+const states = async () => {
+    let covid = await covidAPI();
+    let stateData = covid.stateWiseData;
+    console.log(stateData);
 }
 
-module.exports = data;
+module.exports = { country, states };

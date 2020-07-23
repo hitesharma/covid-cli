@@ -2,18 +2,15 @@
 
 const program = require("commander");
 const pkg = require("../package.json");
-const data = require("../command/data");
-
-program
-  .command("key", "manage api key ");
+const { country, states } = require("../command/data");
 
 program
   .option("-a", 'show country data')
-  .action((cmd) => data(cmd));
+  .action(() => country());
 
 program
   .option('-s', 'show states data')
-  .action((cmd) => data(cmd));
+  .action(() => states());
 
 program
   .version(pkg.version)
