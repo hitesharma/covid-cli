@@ -2,15 +2,15 @@
 
 const program = require("commander");
 const pkg = require("../package.json");
-const { country, states } = require("../command/data");
+const data = require("../command/data");
 
 program
   .option("-a", 'show country data')
-  .action(() => country());
+  .action(() => data.country());
 
 program
-  .option('-s', 'show states data')
-  .action(() => states());
+  .option("-s", 'show states data')
+  .action(() => data.states());
 
 program
   .version(pkg.version)
