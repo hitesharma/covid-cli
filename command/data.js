@@ -5,8 +5,8 @@ const data = {
     async country() {
         try {
             const covid = await covidAPI();
-            let overallData = covid.overallData;
-            console.log(overallData);
+            let countryData = covid.countryData;
+            console.log(countryData);
         }
         catch (err) {
             console.log(err);
@@ -16,7 +16,7 @@ const data = {
     async states() {
         try {
             const covid = await covidAPI();
-            let stateData = covid.stateWiseData;
+            let stateData = covid.stateData;
             console.log(stateData);
         }
         catch (err) {
